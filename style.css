@@ -1,0 +1,434 @@
+/*-----------------------------------------------------------------------------
+  1. IMPORT & ROOT VARIABLES
+-----------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --main_background_color: #EADBC9;
+    --main_text_color: #594B42;
+}
+
+/*-----------------------------------------------------------------------------
+  2. GLOBAL STYLES
+-----------------------------------------------------------------------------*/
+* {
+    font-family: 'Poppins';
+}
+
+body {
+    color: var(--main_text_color);
+    background-color: var(--main_background_color);
+    overflow: hidden;
+}
+
+/*-----------------------------------------------------------------------------
+  3. BASE ELEMENT STYLES
+-----------------------------------------------------------------------------*/
+.welcome-screen {
+    text-align: center;
+    background-color: var(--main_background_color);
+    height: 100vh;
+}
+
+.welcome-screen h1 {
+    background: #F0B7A1;
+    background: linear-gradient(to bottom right, #F0B7A1, #BF6E4E, #904f35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.75;
+}
+
+.start-order {
+    align-self: center;
+    font-size: large;
+    font-weight: 400;
+    width: 50vh;
+    height: 10vh;
+    border: 2px solid var(--main_text_color);
+    border-radius: 40px;
+    color: var(--main_text_color);
+    background-color: var(--main_background_color);
+    transition: all 0.3s ease;
+}
+
+.start-order:hover {
+    border: 2px solid var(--main_background_color);
+    background-color: var(--main_text_color);
+    color: var(--main_background_color);
+    transform: scale(1.05);
+}
+
+/*-----------------------------------------------------------------------------
+  4. HEADER & NAVIGATION
+-----------------------------------------------------------------------------*/
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.header-row h4 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.main-content header {
+    color: var(--main_background_color);
+    background-color: #594b4240;
+    border-bottom: 2px solid var(--main_background_color);
+}
+
+.main-content header .barLogo {
+    width: 60px;
+    margin: 0 auto;
+}
+
+
+.sidebar {
+    height: 100vh;
+    top: 0;
+    color: var(--main_text_color);
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.category-btn {
+    align-self: center;
+    font-size: large;
+    font-weight: 400;
+    height: 10vh;
+    border: 1px solid var(--main_text_color);
+    border-radius: 40px;
+    color: var(--main_text_color);
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.category-btn:focus {
+    background-color: var(--main_text_color);
+    color: var(--main_background_color);
+    border: 1px solid var(--main_text_color);
+}
+
+.category-btn:hover {
+    box-shadow: 7px 7px 12px rgba(25, 25, 25, 0.215);
+    transform: scale(1.05);
+}
+
+/*-----------------------------------------------------------------------------
+  5. CONTENT & PRODUCT GRID
+-----------------------------------------------------------------------------*/
+#showed-item {
+    transition: all 0.3s ease;
+    border: 2px solid #594B42;
+}
+
+#showed-item:hover {
+    box-shadow: 7px 7px 15px var(--main_text_color);
+    transform: scale(1.01);
+}
+
+.menu-section h1 {
+    color: var(--main_background_color);
+}
+
+.menu-section {
+    height: 75vh;
+    overflow-y: auto;
+}
+
+.add-to-cart {
+    padding: 7px 12px;
+    background-color: var(--main_text_color);
+    color: var(--main_background_color);
+    border: 1px solid var(--main_text_color);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: var(--main_background_color);
+    color: var(--main_text_color);
+    transform: scale(1.05);
+}
+
+/*-----------------------------------------------------------------------------
+  6. CART & FOOTER
+-----------------------------------------------------------------------------*/
+.cart-bar {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+.cart-bar button {
+    font-size: 1.5rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--main_text_color);
+    color: var(--main_background_color);
+    border: 1px solid var(--main_background_color);
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
+
+.cart-bar button:hover {
+    background-color: var(--main_background_color);
+    color: var(--main_text_color);
+    transform: scale(1.03);
+}
+
+.cart-info {
+    font-size: 1.2rem;
+    padding-left: 35vw;
+}
+
+/*-----------------------------------------------------------------------------
+  7. ANIMATIONS
+-----------------------------------------------------------------------------*/
+#cart-item-count {
+    display: inline-block;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.pulse-animation {
+    animation: pulse 0.3s ease;
+}
+
+/*-----------------------------------------------------------------------------
+  8. GRID SYSTEM FOR MENU ITEMS
+-----------------------------------------------------------------------------*/
+.menu-items .col-md-4 {
+    max-width: 33.33%;
+    padding: 10px;
+}
+
+.menu-items .col-md-3 {
+    margin-bottom: 30px;
+}
+
+/*-----------------------------------------------------------------------------
+  9. MODAL & MISCELLANEOUS STYLES
+-----------------------------------------------------------------------------*/
+.modal-dialog-centered {
+    max-width: 600px;
+}
+
+#checkout-btn {  
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.remove-item {  
+    font-size: 1rem;
+    padding: 5px;
+    background-color: var(--main_background_color);
+    color: var(--main_text_color);
+    border: 1px solid var(--main_text_color);
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
+
+.remove-item:hover {
+    background-color: var(--main_text_color);
+    color: var(--main_background_color);
+    transform: scale(1.03);
+}
+
+.modal, .menu-section, .welcome-screen, .main-content {
+    background-color: hsla(0,11%,12%,1);
+    background-image:
+        radial-gradient(at 100% 100%, rgb(181, 158, 140) 0px, transparent 50%),
+        radial-gradient(at 1% 100%, hsla(24,25%,46%,1) 0px, transparent 50%),
+        radial-gradient(at 38% 7%, hsla(26,32%,29%,1) 0px, transparent 50%);
+    background-size: 250% 250%;
+    animation: gradient 10s ease-in-out infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#viewCartModalLabel,
+#orderModalLabel,
+#paymentMethodModalLabel,
+#paymentModalLabel,
+#final-total,
+.paymentModalTotal,
+#orderConfirmationModalLabel,
+.orderModalOrderNumber,
+#itemDetailModalLabel {
+    font-size: 1.5rem;
+    color: var(--main_text_color);
+}
+#itemDetailImage {
+    max-height: 300px;
+    object-fit: cover;
+}
+#itemDetailDesc, #itemDetailCalories{
+    font-size: 1.3rem;
+    color: var(--main_text_color);
+}
+#showed-item{
+    color: var(--main_text_color);
+}
+
+
+/*-----------------------------------------------------------------------------
+  10. FORM & BUTTON CONTROLS
+-----------------------------------------------------------------------------*/
+.dine-in, .take-away {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    margin: 15px;
+}
+
+.pay-card, .pay-counter, #start-over-btn {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 7px;
+}
+
+#pay-now {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 7px;
+}
+.add-to-cart-detail{
+    padding: 10px;
+}
+
+.dine-in, .take-away, #checkout-btn, .pay-card, .pay-counter, #pay-now, #start-over-btn, .add-to-cart-detail {
+    background-color: var(--main_text_color);
+    color: var(--main_background_color);
+    border: 1px solid var(--main_background_color);
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
+
+.dine-in:hover,
+.take-away:hover,
+#checkout-btn:hover,
+.pay-card:hover,
+.pay-counter:hover,
+#pay-now:hover,
+#start-over-btn:hover,
+.add-to-cart-detail:hover {
+    background-color: var(--main_background_color);
+    color: var(--main_text_color);
+    border: 1px solid var(--main_text_color);
+    transform: scale(1.03);
+}
+
+#total-text {
+    font-size: 1.4rem;
+    color: var(--main_text_color);
+}
+
+.cart-item {
+    padding-top: 15px;
+    font-size: 1.1rem;
+    color: var(--main_text_color);
+}
+
+
+#itemDetailImage {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+/*-----------------------------------------------------------------------------
+  11. MEDIA QUERIES (SMALLER SCREENS)
+-----------------------------------------------------------------------------*/
+@media (max-width: 767px) {
+    .menu-items .col-md-3 {
+        max-width: 100%;
+    }
+    .welcome-screen h1 {
+        font-size: 1.8rem;
+    }
+    .welcome-screen button {
+        width: 90%;
+        max-width: none;
+        font-size: 1rem;
+        margin: 1rem auto;
+    }
+    .carousel-container {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .sidebar h4 {
+        display: none;
+    }
+    .sidebar {
+        height: auto;
+        width: 90%;
+        max-width: 350px;
+        padding: 0.2rem;
+        margin: 0 auto;
+    }
+    
+    .category-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0;
+        margin: 0;
+    }
+    .category-list .nav-item {
+        width: 22%;
+        margin-bottom: 0;
+    }
+    .category-btn {
+        width: 100%;
+        height: 2.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .menu-items .col-md-4 {
+        max-width: 50%;
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
+    
+    .cart-info {
+        padding-left: 5vw;
+        font-size: 1rem;
+    }
+    
+    .barLogo {
+        width: 50px;
+        padding-left: 0;
+        float: none;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+}
